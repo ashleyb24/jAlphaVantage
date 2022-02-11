@@ -68,11 +68,6 @@ public final class SeriesQuery extends Query<Series> {
 
     @Override
     public Series deserializeBytes(byte[] response, ObjectMapper objectMapper) throws QueryExecutionException {
-        if (!objectMapper.canDeserialize(objectMapper.constructType(Series.class))) {
-            SimpleModule module = new SimpleModule();
-            module.addDeserializer(Series.class, new SeriesDeserializer());
-            objectMapper.registerModule(module);
-        }
         try {
             return objectMapper.readValue(response, Series.class);
         } catch (IOException e) {
