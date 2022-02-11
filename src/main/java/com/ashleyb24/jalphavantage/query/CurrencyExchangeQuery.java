@@ -2,8 +2,8 @@ package com.ashleyb24.jalphavantage.query;
 
 import com.ashleyb24.jalphavantage.exception.QueryBuildingException;
 import com.ashleyb24.jalphavantage.exception.QueryExecutionException;
-import com.ashleyb24.jalphavantage.model.CurrencyExchange;
-import com.ashleyb24.jalphavantage.model.response.CurrencyExchangeResponse;
+import com.ashleyb24.jalphavantage.model.exchange.CurrencyExchange;
+import com.ashleyb24.jalphavantage.model.exchange.CurrencyExchangeResponse;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

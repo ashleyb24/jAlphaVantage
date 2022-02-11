@@ -2,8 +2,8 @@ package com.ashleyb24.jalphavantage.query;
 
 import com.ashleyb24.jalphavantage.exception.QueryBuildingException;
 import com.ashleyb24.jalphavantage.exception.QueryExecutionException;
-import com.ashleyb24.jalphavantage.model.GlobalQuote;
-import com.ashleyb24.jalphavantage.model.response.GlobalQuoteResponse;
+import com.ashleyb24.jalphavantage.model.quote.GlobalQuote;
+import com.ashleyb24.jalphavantage.model.quote.GlobalQuoteResponse;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

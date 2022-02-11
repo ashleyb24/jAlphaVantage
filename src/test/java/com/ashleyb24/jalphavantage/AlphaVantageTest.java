@@ -5,7 +5,7 @@ import com.ashleyb24.jalphavantage.exception.QueryExecutionException;
 import com.ashleyb24.jalphavantage.executor.OkHttpQueryExecutor;
 import com.ashleyb24.jalphavantage.executor.QueryExecutor;
 import com.ashleyb24.jalphavantage.executor.RestTemplateQueryExecutor;
-import com.ashleyb24.jalphavantage.model.GlobalQuote;
+import com.ashleyb24.jalphavantage.model.quote.GlobalQuote;
 import com.ashleyb24.jalphavantage.query.GlobalQuoteQuery;
 import org.junit.Test;
 import org.junit.runner.RunWith;

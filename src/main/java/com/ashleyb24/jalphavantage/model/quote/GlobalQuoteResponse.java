@@ -1,6 +1,5 @@
-package com.ashleyb24.jalphavantage.model.response;
+package com.ashleyb24.jalphavantage.model.quote;
 
-import com.ashleyb24.jalphavantage.model.GlobalQuote;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 

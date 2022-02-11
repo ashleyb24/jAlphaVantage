@@ -1,7 +1,7 @@
 package com.ashleyb24.jalphavantage.executor;
 
 import com.ashleyb24.jalphavantage.exception.QueryExecutionException;
-import com.ashleyb24.jalphavantage.model.GlobalQuote;
+import com.ashleyb24.jalphavantage.model.quote.GlobalQuote;
 import com.ashleyb24.jalphavantage.query.GlobalQuoteQuery;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.HttpUrl;

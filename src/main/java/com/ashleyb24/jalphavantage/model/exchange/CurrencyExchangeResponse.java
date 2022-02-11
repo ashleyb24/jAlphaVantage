@@ -1,6 +1,5 @@
-package com.ashleyb24.jalphavantage.model.response;
+package com.ashleyb24.jalphavantage.model.exchange;
 
-import com.ashleyb24.jalphavantage.model.CurrencyExchange;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Data;
 
