@@ -1,12 +1,10 @@
 package com.ashleyb24.jalphavantage.query;
 
-import com.ashleyb24.jalphavantage.deserializer.SeriesDeserializer;
 import com.ashleyb24.jalphavantage.exception.QueryBuildingException;
 import com.ashleyb24.jalphavantage.exception.QueryExecutionException;
 import com.ashleyb24.jalphavantage.model.Interval;
 import com.ashleyb24.jalphavantage.model.series.Series;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import java.io.IOException;
 import java.util.Arrays;
