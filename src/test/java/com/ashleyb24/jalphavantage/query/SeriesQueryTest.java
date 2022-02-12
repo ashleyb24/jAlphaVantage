@@ -125,6 +125,34 @@ public class SeriesQueryTest {
     }
 
     @Test
+    public void testGetQueryParamsWeekly() {
+        seriesQuery = new SeriesQuery(SeriesQuery.SeriesType.WEEKLY, SYMBOL);
+
+        Map<String, String> queryParams = seriesQuery.getQueryParams();
+
+        assertEquals(SYMBOL, queryParams.get(SYMBOL_KEY));
+        assertEquals(1, queryParams.size());
+    }
+
+    @Test
+    public void testGetQueryParamsDefaultConstructorWeekly() {
+        seriesQuery = new SeriesQuery(SeriesQuery.SeriesType.WEEKLY);
+        seriesQuery.setSymbol(SYMBOL);
+        seriesQuery.setInterval(INTERVAL);
+
+        Map<String, String> queryParams = seriesQuery.getQueryParams();
+
+        assertEquals(SYMBOL, queryParams.get(SYMBOL_KEY));
+        assertEquals(1, queryParams.size());
+    }
+
+    @Test(expected = QueryBuildingException.class)
+    public void testGetQueryParamsDefaultConstructorNoSymbolWeekly() {
+        seriesQuery = new SeriesQuery(SeriesQuery.SeriesType.WEEKLY);
+        seriesQuery.getQueryParams();
+    }
+
+    @Test
     public void testDeserializeBytes() throws IOException, QueryExecutionException {
         seriesQuery = new SeriesQuery(SeriesQuery.SeriesType.INTRADAY, SYMBOL, INTERVAL);
 

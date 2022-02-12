@@ -76,6 +76,7 @@ public final class SeriesQuery extends Query<Series> {
     public enum SeriesType {
         INTRADAY("TIME_SERIES_INTRADAY", new String[]{SYMBOL, INTERVAL}),
         DAILY("TIME_SERIES_DAILY", new String[]{SYMBOL}),
+        WEEKLY("TIME_SERIES_WEEKLY", new String[]{SYMBOL}),
         MONTHLY("TIME_SERIES_MONTHLY", new String[]{SYMBOL});
 
         protected final String function;

@@ -19,6 +19,7 @@ public class SeriesDeserializerTest {
     private Series intradaySeries;
     private Series dailySeries;
     private Series monthlySeries;
+    private Series weeklySeries;
 
     @Before
     public void setup() throws IOException {
@@ -29,6 +30,7 @@ public class SeriesDeserializerTest {
         intradaySeries = objectMapper.readValue(new File("src/test/resources/data/IntradayResponse.json"), Series.class);
         dailySeries = objectMapper.readValue(new File("src/test/resources/data/DailyResponse.json"), Series.class);
         monthlySeries = objectMapper.readValue(new File("src/test/resources/data/MonthlyResponse.json"), Series.class);
+        weeklySeries = objectMapper.readValue(new File("src/test/resources/data/WeeklyResponse.json"), Series.class);
     }
 
     @Test
@@ -98,6 +100,32 @@ public class SeriesDeserializerTest {
     @Test
     public void testMonthlyTimeSeries() {
         Map<String, TimeSeries> timeSeries = monthlySeries.getTimeSeries();
+        assertNotNull(timeSeries);
+        assertFalse(timeSeries.isEmpty());
+        timeSeries.forEach((key, value) -> {
+            assertNotNull(value.getOpen());
+            assertNotNull(value.getHigh());
+            assertNotNull(value.getLow());
+            assertNotNull(value.getClose());
+            assertNotNull(value.getVolume());
+        });
+    }
+
+    @Test
+    public void testWeeklyMetadata() {
+        Metadata metadata = weeklySeries.getMetadata();
+        assertNotNull(metadata);
+        assertEquals("Weekly Prices (open, high, low, close) and Volumes", metadata.getInformation());
+        assertEquals("IBM", metadata.getSymbol());
+        assertEquals("2022-02-11", metadata.getLastRefreshed());
+        assertEquals("US/Eastern", metadata.getTimeZone());
+        assertNull(metadata.getInterval());
+        assertNull(metadata.getOutputSize());
+    }
+
+    @Test
+    public void testWeeklyTimeSeries() {
+        Map<String, TimeSeries> timeSeries = weeklySeries.getTimeSeries();
         assertNotNull(timeSeries);
         assertFalse(timeSeries.isEmpty());
         timeSeries.forEach((key, value) -> {
